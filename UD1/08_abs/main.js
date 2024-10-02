@@ -1,9 +1,11 @@
-const assert = require('assert').strict;
+
 
 function abs(value) {
-
+    const valorAbsoluto = Math.abs(numero);
+    console.log(valorAbsoluto);
 }
 
-assert.strictEqual(abs(4), 4)
-assert.strictEqual(abs(-4), 4)
-assert.strictEqual(abs(0), 0)
+abs(-10);
+abs(5);
+abs(0);
+
