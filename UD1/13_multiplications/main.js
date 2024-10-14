@@ -1,8 +1,19 @@
 function printMultiplicationTables() {
+    console.log("Tabla de multiplicar del 1 al 10");
+    console.log("-------------------------------");
 
+    for (let i = 1; i <= 10; i++) {
+        let fila = "";
+        for (let j = 1; j <= 10; j++) {
+            fila += `${i * j}\t`;
+        }
+        console.log(fila);
+    }
 }
 
 printMultiplicationTables()
+
+
 // expected output
 //     1   2   3   ...
 // 1   1   2   3   ...
