@@ -4,14 +4,34 @@
 <title>DOM básico</title>
 <script type="text/javascript">
 window.onload = function() {
+
+	
 	// Numero de enlaces de la pagina
+	const enlaces = document.getElementsByTagName("a");
+    console.log("Número de enlaces en la página:", enlaces.length);
 
 	// Direccion del penultimo enlace
+	if (enlaces.length >= 2) {
+        const penultimoEnlace = enlaces[enlaces.length - 2];
+        console.log("Dirección del penúltimo enlace:", penultimoEnlace.href);
+    } else {
+        console.log("No hay suficientes enlaces para obtener el penúltimo enlace.");
+    }
 
 	// Numero de enlaces que apuntan a http://prueba
+	const enlacesAPrueba = Array.from(enlaces).filter(enlace => enlace.href === "http://prueba/");
+    console.log("Número de enlaces que apuntan a 'http://prueba':", enlacesAPrueba.length);
 
 	// Numero de enlaces del tercer párrafo
-
+	const parrafos = document.getElementsByTagName("p");
+    if (parrafos.length >= 3) {
+        const tercerParrafo = parrafos[2];
+        const enlacesTercerParrafo = tercerParrafo.getElementsByTagName("a");
+        console.log("Número de enlaces en el tercer párrafo:", enlacesTercerParrafo.length);
+    } else {
+        console.log("No hay suficiente párrafos para obtener el tercer párrafo.");
+    }
+	
 }
 </script>
 </head>
