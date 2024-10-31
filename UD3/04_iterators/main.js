@@ -106,6 +106,7 @@ function avgYears(faction) {
 // use console.log
 iterateSimple()
 iterateForEach()
+avgYears('Rebels')
 // try {
 //   assert.deepStrictEqual(mapIds(), [2,8,40,66])
 //   assert.deepStrictEqual(rebels(), [pilots[0], pilots[3]])
