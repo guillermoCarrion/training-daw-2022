@@ -55,23 +55,36 @@ function iterateForEach() {
   pilots.forEach(function (pilot){
     console.log(pilot);
   })
-
   
 }
 
-function mapIds() {
-  let res = pilots.map(function (value, index, array){
-    return value.id
-  })
 
-  // return pilots.map((value) => value.id)
+function mapIds() {
+/*
+  let ids = []
+  
+  for (let pilot of pilots) 
+  console.log(pilot), 
+  ids.push(pilot.id)
+*/
+  return pilots.map((pilot) => pilot.id)
+
 }
 
 function rebels() {
-  return  pilots.filter((value) => {
-    return value.faction === 'Rebels'
-  })
+  return pilots.filter((pilot) => pilot.faction === 'Rebels');
 }
+
+//filter
+
+/*
+function rebels() {
+  return pilots
+    .filter((pilot) => pilot.faction ===Rebels )
+    .map ((pilot) => pilot.id)
+    .filter((pilot) => pilot > 5)
+  }
+*/
 
 function totalFaction(faction) {
   return pilots
@@ -80,17 +93,13 @@ function totalFaction(faction) {
 }
 
 function avgYears(faction) {
-  let selectedFaction = pilots
-                          .filter((value) => value.faction === faction)
-  let suma = 0
-
-  selectedFaction.forEach(function(pilot){
-    suma +=pilot.years
-  })
-  return suma / selectedFaction.length
-
+  return pilots
+    .filter(pilot => pilot.faction === faction)
+    .map((pilot) => pilot.years)
+    .reduce((pv, cv) => pv+cv, 0) / pilots.length
+    
   /*
-    selectedFaction.refuce((previousValue, currentValue) => )
+    selectedFaction.reduce((previousValue, currentValue) => )
   */
 }
 
