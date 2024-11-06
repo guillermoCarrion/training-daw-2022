@@ -1,15 +1,37 @@
 window.onload = function() {
-    console.log(document.main_form.elements)
+    const opciones = document.getElementById('opciones');
+    const submitButton = document.getElementById('submit');
+    const preguntaSi = document.getElementById('pregunta_si');
+    const checkboxCondiciones = document.getElementById('condiciones');
+    const checkboxPrivacidad = document.getElementById('privacidad');
+    const nameField = document.main_form.name;
+    const surnameField = document.main_form.surname;
+    const descriptionField = document.main_form.description;
 
-    console.log(document.getElementById('pregunta_si').value)
-    console.log(document.getElementById('pregunta_si').checked)
+    opciones.disabled = true;
+    submitButton.disabled = true;
 
-    document.getElementById('pregunta_si').onchange = changeValue
-    document.getElementById('pregunta_no').onchange = changeValue
+    preguntaSi.onchange = function() {
+        opciones.disabled = !preguntaSi.checked;
+    };
 
-    
-}
+    checkboxCondiciones.onchange = checkboxPrivacidad.onchange = function() {
+        submitButton.disabled = !(checkboxCondiciones.checked && checkboxPrivacidad.checked);
+    };
 
-function changeValue(e) {
-     console.log('changed' + e.target.value)
-}
+    submitButton.onclick = function(e) {
+        e.preventDefault();
+
+        if (!nameField.value.trim()) {
+            return alert("Introduce el nombre");
+        }
+        if (!surnameField.value.trim()) {
+            return alert("Introduce el apellido");
+        }
+        if (descriptionField.value.length > 80) {
+            return alert("Menos de 80 caracteres");
+        }
+
+        alert("Formulario enviado");
+    };
+};
