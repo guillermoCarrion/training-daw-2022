@@ -19,7 +19,6 @@ function avgByCategory(category){
     return sumTotal / productsFilteredByCategory.length
 }
 
-
 /*
 assert.equal(avgByCategory('Electronics'), 55)
 assert.equal(avgByCategory('Clothes'), 55)

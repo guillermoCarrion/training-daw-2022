@@ -1,11 +1,9 @@
 function insertarElemento(array, elemento, alPrincipio) {
     
     if (!array.includes(elemento)) {
-        
         if (alPrincipio) {
             array.unshift(elemento);
         } else {
-            
             array.push(elemento);
         }
     }
@@ -21,4 +19,3 @@ console.log(array);
 insertarElemento(array, 'melocoton', true); 
 console.log(array); 
 
-insertarElemento();
