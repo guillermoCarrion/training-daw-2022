@@ -16,7 +16,7 @@ window.onload = function(e) {
       document.querySelector("p").style.backgroundColor = "#0000db"; 
 
       buttons.forEach(button => {
-        button.style.color = "#1111db"; // Cambia "nuevoColorFrente" por el color que prefieras
+        button.style.color = "#1111db"; 
       });
         //document.getElementsByTagName('h1')[0].innerText = 'Changed from JS!!'
 }
